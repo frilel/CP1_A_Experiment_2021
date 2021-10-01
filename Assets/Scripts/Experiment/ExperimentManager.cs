@@ -60,6 +60,11 @@ public class ExperimentManager : MonoBehaviour
         startTime = Time.time;
         RunningExperiment = true;
 
+        if(go.name=="RateResultScreen")
+        {
+            FindObjectOfType<RatingData>().ShowResult();
+        }
+
         return true;
     }
 }

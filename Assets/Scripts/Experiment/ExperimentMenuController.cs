@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ExperimentMenuController : MonoBehaviour
@@ -21,4 +22,8 @@ public class ExperimentMenuController : MonoBehaviour
         ExperimentManager.StartExperiment();
     }
 
+    public void EndWarmUp()
+    {
+        SceneManager.LoadScene("Experiment1");
+    }
 }

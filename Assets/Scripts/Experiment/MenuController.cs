@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -14,6 +15,7 @@ public class MenuController : MonoBehaviour
     public Button SettingsButton;
     public Button ControlsButton;
     public Button ShowNextStimulusButton;
+    public Button[] RateButtons;
 
     private ExperimentManager experimentManager;
 
@@ -21,7 +23,9 @@ public class MenuController : MonoBehaviour
     {
         experimentManager = FindObjectOfType<ExperimentManager>();
 
-        BlackUIBackground.canvasRenderer.SetAlpha(1f);
+        if(SceneManager.GetActiveScene().name != "ExperimentWarmUp")
+            BlackUIBackground.canvasRenderer.SetAlpha(1f);
+
         ExperimentMenu.SetActive(true);
         SettingsMenu.SetActive(false);
         ControlsMenu.SetActive(false);
@@ -30,6 +34,10 @@ public class MenuController : MonoBehaviour
         SettingsButton.onClick.AddListener(OnSettingsClick);
         ControlsButton.onClick.AddListener(OnControlsClick);
         ShowNextStimulusButton.onClick.AddListener(OnShowNextStimulus);
+        for(int i=0;i<RateButtons.Length;i++)
+        {
+            RateButtons[i].onClick.AddListener(OnShowNextStimulus);
+        }
     }
     private void OnShowNextStimulus()
     {
