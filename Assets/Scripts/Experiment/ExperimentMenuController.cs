@@ -9,9 +9,9 @@ public class ExperimentMenuController : MonoBehaviour
     private MenuController MenuController;
     private ExperimentManager ExperimentManager;
 
-    private void Awake()
+    private void Start()
     {
-        StartExperimentButton.onClick.AddListener(StartExperimentClick);
+        StartExperimentButton?.onClick.AddListener(StartExperimentClick);
         MenuController = FindObjectOfType<MenuController>();
         ExperimentManager = FindObjectOfType<ExperimentManager>();
     }

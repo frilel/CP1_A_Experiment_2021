@@ -19,11 +19,11 @@ public class MenuController : MonoBehaviour
 
     private ExperimentManager experimentManager;
 
-    private void Awake()
+    private void Start()
     {
         experimentManager = FindObjectOfType<ExperimentManager>();
 
-        if(SceneManager.GetActiveScene().name != "ExperimentWarmUp")
+        if (SceneManager.GetActiveScene().name != "ExperimentWarmUp")
             BlackUIBackground.canvasRenderer.SetAlpha(1f);
 
         ExperimentMenu.SetActive(true);
@@ -34,45 +34,43 @@ public class MenuController : MonoBehaviour
         SettingsButton.onClick.AddListener(OnSettingsClick);
         ControlsButton.onClick.AddListener(OnControlsClick);
         ShowNextStimulusButton.onClick.AddListener(OnShowNextStimulus);
-        for(int i=0;i<RateButtons.Length;i++)
+        for(int i = 0; i < RateButtons.Length; i++)
         {
             RateButtons[i].onClick.AddListener(OnShowNextStimulus);
         }
     }
     private void OnShowNextStimulus()
     {
-        TurnOffMenues();
-
-        if (experimentManager.ShowNextStimulus() == false)
+        if (experimentManager.ShowNextStimulus() == true)
         {
-            ShowEndOfExperiment();
+            TurnOffMenues();
         }
     }
 
-    private void ShowEndOfExperiment()
-    {
-        NextStimulusScreen.SetActive(true);
-        BlackUIBackground.canvasRenderer.SetAlpha(1f);
+    //private void ShowEndOfExperiment()
+    //{
+    //    NextStimulusScreen.SetActive(true);
+    //    BlackUIBackground.canvasRenderer.SetAlpha(1f);
 
-        //foreach (GameObject child in NextStimulusScreen.transform)
-        //{
-        //    if (child.name == "Instructions")
-        //    {
-        //        child.GetComponent<Text>().text = "The experiment is over. You may remove the headset and adress the researchers";
-        //    }
-        //    else if (child.name == "ShowNextStimulus Button")
-        //    {
-        //        foreach (GameObject grandChild in child.transform)
-        //        {
-        //            if (grandChild.name == "Text")
-        //            {
-        //                grandChild.GetComponent<Text>().text = "Exit application";
-        //                grandChild.GetComponent<Button>().onClick.AddListener(() => { Application.Quit(); });
-        //            }
-        //        }
-        //    }
-        //}
-    }
+    //    foreach (GameObject child in NextStimulusScreen.transform)
+    //    {
+    //        if (child.name == "Instructions")
+    //        {
+    //            child.GetComponent<Text>().text = "The experiment is over. You may remove the headset and adress the researchers";
+    //        }
+    //        else if (child.name == "ShowNextStimulus Button")
+    //        {
+    //            foreach (GameObject grandChild in child.transform)
+    //            {
+    //                if (grandChild.name == "Text")
+    //                {
+    //                    grandChild.GetComponent<Text>().text = "Exit application";
+    //                    grandChild.GetComponent<Button>().onClick.AddListener(() => { Application.Quit(); });
+    //                }
+    //            }
+    //        }
+    //    }
+    //}
 
     private void OnExperimentClick()
     {

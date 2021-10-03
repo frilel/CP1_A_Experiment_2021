@@ -3792,9 +3792,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "<b>Welcome!</b>\nGet accustomed to the environment and let the researchers
     know if you feel bad about anything. \n\nIf the character to the left is not
-    the same as your height press the \"Reset view\" button on your controller. Ask
-    the researchers for help if needed.\n\n<b>When you feel ready and the researchers
-    tell you: </b>Press the button below"
+    the same as your own height press the \"Reset view\" button on your controller.
+    Ask the researchers for help if needed.\n\n<b>When you feel ready and the researchers
+    tell you to: </b>Press the button below"
 --- !u!222 &1973113682
 CanvasRenderer:
   m_ObjectHideFlags: 0

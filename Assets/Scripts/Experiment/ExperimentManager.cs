@@ -11,7 +11,7 @@ public class ExperimentManager : MonoBehaviour
     private float startTime = 0f;
     private int stimuliCounter = 0;
 
-    private void Awake()
+    private void Start()
     {
         MenuController = FindObjectOfType<MenuController>();
     }
@@ -45,7 +45,7 @@ public class ExperimentManager : MonoBehaviour
         
         GameObject go;
 
-        // Only deactivate previous stimulus if this isn't the first stimulus
+        // Deactivate previous stimulus if this isn't the first stimulus
         if (stimuliCounter != 0)
         {
             go = (GameObject)Stimuli.GetValue(stimuliCounter-1);
@@ -62,6 +62,7 @@ public class ExperimentManager : MonoBehaviour
 
         if(go.name=="RateResultScreen")
         {
+            //MenuController.BlackUIBackground.canvasRenderer.SetAlpha(1f);
             FindObjectOfType<RatingData>().ShowResult();
         }
 
