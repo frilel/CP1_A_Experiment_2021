@@ -36,6 +36,14 @@ public class ExperimentManager : MonoBehaviour
     public void WaitForNextStimulus()
     {
         RunningExperiment = false;
+
+        // Deactivate previous stimulus if this isn't the first stimulus
+        if (stimuliCounter != 0)
+        {
+            GameObject go = (GameObject)Stimuli.GetValue(stimuliCounter - 1);
+            go.SetActive(false);
+        }
+
         MenuController.WaitForNextStimulus();
     }
     public bool ShowNextStimulus()
@@ -43,28 +51,21 @@ public class ExperimentManager : MonoBehaviour
         if (stimuliCounter >= Stimuli.Length)
             return false;
         
-        GameObject go;
-
-        // Deactivate previous stimulus if this isn't the first stimulus
-        if (stimuliCounter != 0)
-        {
-            go = (GameObject)Stimuli.GetValue(stimuliCounter-1);
-            go.SetActive(false);
-        }
-
         // Activate new stimulus
-        go = (GameObject)Stimuli.GetValue(stimuliCounter);
+        GameObject go = (GameObject)Stimuli.GetValue(stimuliCounter);
         go.SetActive(true);
+
+        if (go.name == "RateResultScreen")
+        {
+            FindObjectOfType<RatingData>().ShowResult();
+            return false;
+        }
 
         stimuliCounter++;
         startTime = Time.time;
         RunningExperiment = true;
 
-        if(go.name=="RateResultScreen")
-        {
-            //MenuController.BlackUIBackground.canvasRenderer.SetAlpha(1f);
-            FindObjectOfType<RatingData>().ShowResult();
-        }
+        
 
         return true;
     }
