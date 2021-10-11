@@ -47,6 +47,11 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    /*private void SendRateData(int num)
+    {
+        FindObjectOfType<RatingData>().AddData(num);
+    }*/
+
     //private void ShowEndOfExperiment()
     //{
     //    NextStimulusScreen.SetActive(true);

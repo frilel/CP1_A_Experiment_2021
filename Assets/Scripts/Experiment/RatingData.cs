@@ -5,14 +5,13 @@ using UnityEngine.UI;
 public class RatingData : MonoBehaviour
 {
 
-    private List<int> ratings = new List<int>();
+    private List<RateData> ratings = new List<RateData>();
     public Text Result1;
-    public Text Result2;
-    public Text Result3;
     
     public void AddData(int num)
     {
-        ratings.Add(num);
+        string name=FindObjectOfType<ExperimentManager>().CurrentStimuliName;
+        ratings.Add(new RateData(name,num));
     }
 
     public void ShowResult()
@@ -21,9 +20,9 @@ public class RatingData : MonoBehaviour
         {
             if(i<9)
             {
-                Result1.text += "Stimuli " + (i + 1).ToString() + ": " + ratings[i] + "\n";
+                Result1.text += ratings[i].name+ ": " + ratings[i].num + "\n";
             }
-            else if(i<18)
+            /*else if(i<18)
             {
                 Result2.text += "Stimuli " + (i + 1).ToString() + ": " + ratings[i] + "\n";            
             }
@@ -31,11 +30,22 @@ public class RatingData : MonoBehaviour
             {
                 Result3.text += "Stimuli " + (i + 1).ToString() + ": " + ratings[i] + "\n";
 
-            }
+            }*/
             
 
 
         }
 
     }
+}
+public class RateData
+{
+    public string name;
+    public int num;
+    public RateData(string n, int numb)
+    {
+        name=n;
+        num=numb;
+    }
+
 }

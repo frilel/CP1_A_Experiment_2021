@@ -13,9 +13,22 @@ public class ExperimentManager : MonoBehaviour
     private float startTime = 0f;
     private int stimuliCounter = 0;
 
+    public string CurrentStimuliName;
+
     private void Start()
     {
         MenuController = FindObjectOfType<MenuController>();
+        ShuffleStimuli();
+    }
+    private void ShuffleStimuli()
+    {
+        for(int i=0;i<9;i++)
+        {
+            int switchNum=Random.Range(0,9);
+            GameObject current=Stimuli[i];
+            Stimuli[i]=Stimuli[switchNum];
+            Stimuli[switchNum]=current;
+        }
     }
     
     private void Update()
@@ -56,6 +69,7 @@ public class ExperimentManager : MonoBehaviour
         // Activate new stimulus
         GameObject go = (GameObject)Stimuli.GetValue(stimuliCounter);
         go.SetActive(true);
+        CurrentStimuliName=go.name;
 
         if (go.name == "RateResultScreen")
         {
