@@ -10,8 +10,8 @@ public class RatingData : MonoBehaviour
     
     public void AddData(int num)
     {
-        string name=FindObjectOfType<ExperimentManager>().CurrentStimuliName;
-        ratings.Add(new RateData(name,num));
+        string name = FindObjectOfType<ExperimentManager>().CurrentStimuliName;
+        ratings.Add(new RateData(name, num));
     }
 
     public void ShowResult()

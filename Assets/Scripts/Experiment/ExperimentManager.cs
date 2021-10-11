@@ -22,10 +22,10 @@ public class ExperimentManager : MonoBehaviour
     {
         for(int i=0;i<9;i++)
         {
-            int switchNum=Random.Range(0,9);
-            GameObject current=Stimuli[i];
-            Stimuli[i]=Stimuli[switchNum];
-            Stimuli[switchNum]=current;
+            int switchNum = Random.Range(0,9);
+            GameObject current = Stimuli[i];
+            Stimuli[i] = Stimuli[switchNum];
+            Stimuli[switchNum] = current;
         }
     }
     
