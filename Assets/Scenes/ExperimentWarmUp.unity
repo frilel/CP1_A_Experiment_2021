@@ -641,6 +641,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  CurrentStimuliName: 
 --- !u!1 &407041624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3754,8 +3755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 450, y: 320}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 450, y: 350}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1973113681
 MonoBehaviour:
@@ -3790,11 +3791,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>Welcome!</b>\nGet accustomed to the environment and let the researchers
-    know if you feel bad about anything. \n\nIf the character to the left is not
-    the same as your own height press the \"Reset view\" button on your controller.
-    Ask the researchers for help if needed.\n\n<b>When you feel ready and the researchers
-    tell you to: </b>Press the button below"
+  m_Text: "<b>Welcome!</b>\nYou're here just to get accustomed to the environment
+    and let the researchers know if you feel bad about anything. \n\nPress the \"Reset
+    view\" button on your controller. Ask the researchers for help if needed. \n\nLet
+    the researchers know if you feel that you are the same height, shorter or taller
+    as the character to the left.\n\n<b>When you feel ready and the researchers tell
+    you to: </b>Press the button below"
 --- !u!222 &1973113682
 CanvasRenderer:
   m_ObjectHideFlags: 0
