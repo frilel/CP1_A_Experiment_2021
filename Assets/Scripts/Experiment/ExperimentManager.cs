@@ -1,4 +1,6 @@
+
 using UnityEngine;
+
 
 public class ExperimentManager : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class ExperimentManager : MonoBehaviour
     private MenuController MenuController;
     private float startTime = 0f;
     private int stimuliCounter = 0;
+
 
     private void Start()
     {
