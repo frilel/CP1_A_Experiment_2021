@@ -20,18 +20,25 @@ public class ExperimentManager : MonoBehaviour
     }
     private void ShuffleStimuli()
     {
-        for(int i=0;i<9;i++)
+        for (int i = 0; i < 9; i++)
         {
-            int switchNum=Random.Range(0,9);
-            GameObject current=Stimuli[i];
-            Stimuli[i]=Stimuli[switchNum];
-            Stimuli[switchNum]=current;
+            int switchNum = Random.Range(0, 9);
+            GameObject current = Stimuli[i];
+            Stimuli[i] = Stimuli[switchNum];
+            Stimuli[switchNum] = current;
+        }
+        for (int i = 9; i < 18; i++)
+        {
+            int switchNum = Random.Range(9, 18);
+            GameObject current = Stimuli[i];
+            Stimuli[i] = Stimuli[switchNum];
+            Stimuli[switchNum] = current;
         }
     }
-    
+
     private void Update()
     {
-        if(RunningExperiment && Time.time - startTime > ExperimentTime)
+        if (RunningExperiment && Time.time - startTime > ExperimentTime)
         {
             WaitForNextStimulus();
         }
@@ -63,11 +70,11 @@ public class ExperimentManager : MonoBehaviour
     {
         if (stimuliCounter >= Stimuli.Length)
             return false;
-        
+
         // Activate new stimulus
         GameObject go = (GameObject)Stimuli.GetValue(stimuliCounter);
         go.SetActive(true);
-        CurrentStimuliName=go.name;
+        CurrentStimuliName = go.name;
 
         if (go.name == "RateResultScreen")
         {
@@ -79,7 +86,7 @@ public class ExperimentManager : MonoBehaviour
         startTime = Time.time;
         RunningExperiment = true;
 
-        
+
 
         return true;
     }
