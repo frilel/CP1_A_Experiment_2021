@@ -10,3 +10,9 @@
  Qinbai - baiq@kth.se
  Ólafur Konráð Albertsson - okalb@kth.se
  Mohamad Harits Nur Fauzan - mhnf@kth.se
+
+Example of stimuli:
+![image](https://user-images.githubusercontent.com/59727728/143861705-7bc090a0-309b-46f1-93cb-49e41702b7cd.png)
+
+The rate form in VR:
+![image](https://user-images.githubusercontent.com/59727728/143861807-9ba8c899-a663-4333-a775-c5a68c215be7.png)
