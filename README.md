@@ -1,5 +1,5 @@
 # CP1_A_Experiment_2021
-Experiment setup for the course 'DM2350 Human Perception for Information Technology' in autumn 2021.
+Experiment setup for the course 'DM2350 Human Perception for Information Technology' in autumn 2021 at KTH in Stockholm.
 The study investigated the perceived openness of two virtual characters, in F-formation, with varying head rotations in a VR environment.
   
 The project was built for the Oculus Quest 2 VR headset and makes use of the XR Interaction Toolkit.
@@ -10,6 +10,8 @@ Christian Lindberg - ckkli@kth.se
 Qinbai - baiq@kth.se
 Ólafur Konráð Albertsson - okalb@kth.se
 Mohamad Harits Nur Fauzan - mhnf@kth.se
+
+Supervised by Christopher Peters https://www.csc.kth.se/~chpeters/
 
 The final report: [CP1_A_Report.pdf](https://github.com/frilel/CP1_A_Experiment_2021/files/7625098/CP1_A_Report.pdf)
 
